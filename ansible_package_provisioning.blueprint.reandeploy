@@ -1,0 +1,571 @@
+{
+  "environments": [
+    {
+      "name": "ubuntu_ansible_package_provisioning",
+      "connectionName": "PX_SSH",
+      "connectionType": "SSH",
+      "envVersion": "01.00.00",
+      "exportedByEmail": "devendra.khandave@hitachivantara.com",
+      "exportedOn": 1585708926383,
+      "packageType": "ansible",
+      "postDeployScript": "",
+      "postDestroyScript": "",
+      "preDeployScript": "",
+      "preDestroyScript": "",
+      "providerName": "Auto_AWS",
+      "providerType": "aws",
+      "providerVersion": "2.26.0",
+      "region": "us-gov-west-1",
+      "released": false,
+      "resources": [
+        {
+          "name": "instance",
+          "resourceName": "aws_instance",
+          "attributes": {
+            "ami": "ami-c5930ca4",
+            "associate_public_ip_address": null,
+            "availability_zone": null,
+            "cpu_core_count": null,
+            "cpu_threads_per_core": null,
+            "credit_specification": null,
+            "disable_api_termination": null,
+            "ebs_block_device": null,
+            "ebs_optimized": null,
+            "ephemeral_block_device": null,
+            "get_password_data": "false",
+            "host_id": null,
+            "iam_instance_profile": null,
+            "instance_initiated_shutdown_behavior": "stop",
+            "instance_type": "t2.micro",
+            "ipv6_address_count": null,
+            "ipv6_addresses": null,
+            "key_name": "anamika-qa",
+            "monitoring": null,
+            "network_interface": null,
+            "placement_group": null,
+            "private_ip": null,
+            "root_block_device": null,
+            "security_groups": "",
+            "source_dest_check": "true",
+            "subnet_id": "subnet-7d608019",
+            "tags": "{\n  \"Owner\": \"devendra.khandave\",\n  \"CreatedBy\": \"REAN Deploy\",\n  \"Name\": \"<Username>\",\n  \"Project\": \"REANPlatform\",\n  \"Product\": \"REANPlatform\",\n  \"ExpirationDate\": \"2020-04-01\",\n  \"Environment\": \"QA\",\n  \"Schedule\": \"IST\"\n}",
+            "tenancy": null,
+            "user_data": null,
+            "user_data_base64": null,
+            "volume_tags": null,
+            "vpc_security_group_ids": "sg-328d5356"
+          },
+          "packages": [
+            {
+              "name": "ansible_playbook",
+              "type": "ansible",
+              "version": "1.0",
+              "attributes": {
+                "become": "false",
+                "become_method": null,
+                "become_user": null,
+                "diff": null,
+                "enabled": "true",
+                "extra_vars": "{\"filename\":\"myfile.txt\"}",
+                "force_handlers": null,
+                "groups": null,
+                "hosts": null,
+                "inventory_file": null,
+                "playbook": "testTags",
+                "roles_path": null,
+                "skip_tags": "{tag2}",
+                "start_at_task": null,
+                "tags": null,
+                "vault_id": null,
+                "verbose": "true"
+              }
+            },
+            {
+              "name": "web-app-ansible-package",
+              "type": "ansible",
+              "version": "1.1",
+              "attributes": {
+                "become": "false",
+                "become_method": "sudo",
+                "become_user": null,
+                "diff": null,
+                "enabled": "true",
+                "extra_vars": null,
+                "force_handlers": null,
+                "groups": null,
+                "hosts": null,
+                "inventory_file": null,
+                "playbook": "web-playbook",
+                "roles_path": null,
+                "skip_tags": null,
+                "start_at_task": null,
+                "tags": null,
+                "vault_id": null,
+                "verbose": "true"
+              }
+            }
+          ],
+          "positionX": 423,
+          "positionY": 203,
+          "resourceType": "RESOURCE"
+        },
+        {
+          "name": "sec",
+          "resourceName": "aws_security_group",
+          "attributes": {
+            "description": null,
+            "egress": "[{\"from_port\":0,\"to_port\":0,\"protocol\":\"-1\",\"cidr_blocks\":[\"0.0.0.0/0\"]}]",
+            "ingress": "[{\"from_port\":0,\"to_port\":0,\"protocol\":\"-1\",\"cidr_blocks\":[\"52.222.74.88/32\"]},{\"from_port\":0,\"to_port\":0,\"protocol\":\"-1\",\"cidr_blocks\":[\"202.149.218.202/32\"]}]",
+            "name": "sec",
+            "name_prefix": null,
+            "revoke_rules_on_delete": "false",
+            "tags": "{\"Owner\":\"<Deployment Owner>\",\"CreatedBy\":\"HCAP Deploy\",\"Name\":\"<Resource Name>\"}",
+            "vpc_id": null
+          },
+          "positionX": 190,
+          "positionY": 192,
+          "resourceType": "RESOURCE"
+        }
+      ]
+    }
+  ],
+  "rean_deploy_version": "v2.15.0",
+  "packages": [
+    {
+      "type": "ansible",
+      "packageName": "ansible_playbook",
+      "packageVersion": "1.0",
+      "accessToken": "SECURED_DF+CkNcV7jJjvhQ5FrrqWv5yfi/ledeykNJvXopxArGxYlVEY3GACqMUpBCuwO9RW5OZCZDt48dp+GwcDOI7Pmb5oYs0",
+      "attributes": [
+        {
+          "name": "force_handlers",
+          "type": "BOOLEAN",
+          "defaultValue": "",
+          "id": 3647,
+          "possibleValues": "true,false",
+          "possibleValuesSet": [
+            "true",
+            "false"
+          ],
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "hosts",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3648,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "skip_tags",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3649,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "enabled",
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "id": 3655,
+          "possibleValues": "true,false",
+          "possibleValuesSet": [
+            "true",
+            "false"
+          ],
+          "required": false,
+          "sampleValue": "true",
+          "secure": false
+        },
+        {
+          "name": "become_user",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3645,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "verbose",
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "id": 3644,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "true",
+          "secure": false
+        },
+        {
+          "name": "tags",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3641,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "start_at_task",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3640,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "diff",
+          "type": "BOOLEAN",
+          "defaultValue": "",
+          "id": 3651,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "playbook",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3650,
+          "possibleValues": "test,createwindows,createFile,testTags,docker",
+          "possibleValuesSet": [
+            "test",
+            "createwindows",
+            "createFile",
+            "testTags",
+            "docker"
+          ],
+          "required": true,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "vault_id",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3652,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "groups",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3642,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "become",
+          "type": "BOOLEAN",
+          "defaultValue": "false",
+          "id": 3646,
+          "possibleValues": "true,false",
+          "possibleValuesSet": [
+            "true",
+            "false"
+          ],
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "extra_vars",
+          "type": "JSON",
+          "defaultValue": "",
+          "id": 3653,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "roles_path",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3654,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "inventory_file",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3656,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "become_method",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3643,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        }
+      ],
+      "createdBy": 1,
+      "createdByName": "admin",
+      "createdOn": 1583738146000,
+      "decryptedAccessToken": "9af78778612525cc564efc123aebd81c823de03c",
+      "defaultPackage": false,
+      "deleted": false,
+      "dependentPackages": [],
+      "deprecated": false,
+      "dnVersion": "v2.15.0",
+      "downloadUrl": "https://github.com/dkalamkar/ansible_playbook-master/archive/v2.tar.gz",
+      "groupName": "chef-group",
+      "id": 375,
+      "imgUrl": "ansible-package.png",
+      "isPrivate": true,
+      "modifiedBy": 1,
+      "modifiedByName": "admin",
+      "modifiedOn": 1583738146000,
+      "released": false,
+      "repoType": "github",
+      "unzippedName": "ansible-package",
+      "visible": true,
+      "zipFileName": "ansible-package-1.0.tar.gz"
+    },
+    {
+      "type": "ansible",
+      "packageName": "web-app-ansible-package",
+      "packageVersion": "1.1",
+      "accessToken": "",
+      "attributes": [
+        {
+          "name": "start_at_task",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3341,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "force_handlers",
+          "type": "BOOLEAN",
+          "defaultValue": "",
+          "id": 3343,
+          "possibleValues": "true,false",
+          "possibleValuesSet": [
+            "true",
+            "false"
+          ],
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "enabled",
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "id": 3354,
+          "possibleValues": "true,false",
+          "possibleValuesSet": [
+            "true",
+            "false"
+          ],
+          "required": false,
+          "sampleValue": "true",
+          "secure": false
+        },
+        {
+          "name": "groups",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3344,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "become",
+          "type": "BOOLEAN",
+          "defaultValue": "false",
+          "id": 3348,
+          "possibleValues": "true,false",
+          "possibleValuesSet": [
+            "true",
+            "false"
+          ],
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "extra_vars",
+          "type": "JSON",
+          "defaultValue": "",
+          "id": 3357,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "tags",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3351,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "become_method",
+          "type": "STRING",
+          "defaultValue": "sudo",
+          "id": 3356,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "verbose",
+          "type": "BOOLEAN",
+          "defaultValue": "true",
+          "id": 3350,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "true",
+          "secure": false
+        },
+        {
+          "name": "roles_path",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3353,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "playbook",
+          "type": "STRINGARRAY",
+          "defaultValue": "web-playbook",
+          "id": 3342,
+          "possibleValues": "web-playbook,bootstrap",
+          "possibleValuesSet": [
+            "web-playbook",
+            "bootstrap"
+          ],
+          "required": true,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "vault_id",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3347,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "inventory_file",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3349,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "skip_tags",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3352,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "diff",
+          "type": "BOOLEAN",
+          "defaultValue": "",
+          "id": 3355,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "become_user",
+          "type": "STRING",
+          "defaultValue": "",
+          "id": 3345,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        },
+        {
+          "name": "hosts",
+          "type": "STRINGARRAY",
+          "defaultValue": "",
+          "id": 3346,
+          "possibleValues": "",
+          "required": false,
+          "sampleValue": "",
+          "secure": false
+        }
+      ],
+      "createdBy": 840,
+      "createdByName": "Gael Charriere",
+      "createdOn": 1575460927000,
+      "decryptedAccessToken": "",
+      "defaultPackage": false,
+      "deleted": false,
+      "dependentPackages": [],
+      "deprecated": false,
+      "description": "web-app-ansible-package",
+      "dnVersion": "v2.15.0",
+      "downloadUrl": "https://api.github.com/repos/gaelcharriere/web-app-ansible-package/tarball/v1.0.33",
+      "groupName": "chef-group",
+      "id": 345,
+      "imgUrl": "ansible-package.png",
+      "isPrivate": true,
+      "modifiedBy": 840,
+      "modifiedByName": "Gael Charriere",
+      "modifiedOn": 1575566516000,
+      "released": false,
+      "repoType": "github",
+      "unzippedName": "web-app",
+      "visible": true,
+      "zipFileName": "web-app-v1.0.33.tar.gz"
+    }
+  ]
+}
